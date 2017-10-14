@@ -1,10 +1,22 @@
 -- :script C:\Users\Patrick\HaskellProjects\Stack.txt
 :! cls
 
-storage = []
+--push (value, list) =
+--  storage = []
+--  storage ++ [value]
 
-push (value, list) = list ++ [value]
-push(4, push (3, storage))
+
+--storage1 = push(3, [])
+--storage = storage1
+--storage
+
+let (:_) = [a,b,c] in (1,2,3)
+
+
+
+
+
+
 
 putStrLn ""
 putStrLn "Process finished with exit code 0"
