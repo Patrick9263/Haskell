@@ -1,3 +1,5 @@
+-- :script C:\Users\Patrick\HaskellProjects\HelloWorld.txt
+
 :! cls
 
 "Hello World!"

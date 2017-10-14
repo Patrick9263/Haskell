@@ -1,7 +1,8 @@
+-- :script C:\Users\Patrick\HaskellProjects\Stack.txt
 :! cls
 
 storage = []
-insert :: storage -> Int -> storage
+push :: storage -> storage
 push dict value = dict ++ [value]
 
 
