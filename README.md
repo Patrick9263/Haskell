@@ -1,2 +1,2 @@
 # HaskellProjects
-Haskell
+Some basic Haskell code.
