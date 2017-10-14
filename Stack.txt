@@ -1,21 +1,37 @@
 -- :script C:\Users\Patrick\HaskellProjects\Stack.txt
 :! cls
 
---push (value, list) =
---  storage = []
---  storage ++ [value]
+:{
+append(value, target_list) =
+  value : target_list
+:}
 
+:{
+helper (n,x,values) =
+  let
+  n = length values
+  first_element = head values
+  next_list = tail values
+  in
+  if n == 0
+    then []
+    else append(first_element,(helper(n-1,x+1,next_list)))
+:}
 
---storage1 = push(3, [])
---storage = storage1
---storage
+:{
+push(values) =
+  helper3(0,0,values)
+:}
 
-let (:_) = [a,b,c] in (1,2,3)
+:{
+pop list =
+  tail list
+:}
 
+example = push([1,2,3,4])
+example
 
-
-
-
+pop(example)
 
 
 putStrLn ""
