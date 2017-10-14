@@ -1,0 +1,10 @@
+:! cls
+
+storage = []
+insert :: storage -> Int -> storage
+push dict value = dict ++ [value]
+
+
+putStrLn ""
+putStrLn "Process finished with exit code 0"
+putStrLn ""
