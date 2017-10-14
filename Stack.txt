@@ -2,9 +2,9 @@
 :! cls
 
 storage = []
-push :: storage -> storage
-push dict value = dict ++ [value]
 
+push (value, list) = list ++ [value]
+push(4, push (3, storage))
 
 putStrLn ""
 putStrLn "Process finished with exit code 0"
