@@ -2,38 +2,60 @@
 :! cls
 
 :{
-append(value, target_list) =
-  value : target_list
+append(value, targetList) =
+  targetList ++ [value]
 :}
 
 :{
 helper (n,x,values) =
   let
   n = length values
-  first_element = head values
-  next_list = tail values
+  firstElement = head values
+  nextList = tail values
   in
   if n == 0
     then []
-    else append(first_element,(helper(n-1,x+1,next_list)))
+    else append(firstElement,(helper(n-1,x+1,nextList)))
+:}
+
+:{
+helper2 stack =
+  reverse (tail (reverse stack))
 :}
 
 :{
 push(values) =
-  helper3(0,0,values)
+  helper(0,0,values)
 :}
 
+
 :{
-pop list =
-  tail list
+pop(howMany, list) =
+  if howMany <= 0
+    then list
+    else pop(howMany-1,helper2(list))
 :}
+
+
+peek (stack) = head stack
+len(stack) = length stack
+
 
 example = push([1,2,3,4])
 example
+examplePop = pop(1,example)
+examplePop
+peek(examplePop)
+len(examplePop)
 
-pop(example)
-
+stack = push([1..30])
+stack
+putStrLn ""
+stack2 = pop(15,stack)
+stack2
+stack3 = push([1..5])
+stack3
+putStrLn ""
 
 putStrLn ""
 putStrLn "Process finished with exit code 0"
-putStrLn ""
