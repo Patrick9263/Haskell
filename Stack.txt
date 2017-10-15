@@ -3,7 +3,7 @@
 
 :{
 append(value, targetList) =
-  targetList ++ [value]
+  value : targetList
 :}
 
 :{
@@ -24,8 +24,8 @@ helper2 stack =
 :}
 
 :{
-push(values) =
-  helper(0,0,values)
+push(values, stack) =
+  stack ++ helper(0,0,values)
 :}
 
 
@@ -37,25 +37,20 @@ pop(howMany, list) =
 :}
 
 
-peek (stack) = head stack
+peek (stack) = head (reverse stack)
 len(stack) = length stack
 
 
-example = push([1,2,3,4])
+
+emptyStack = []
+example = push([1,2,3,4], emptyStack)
 example
+
 examplePop = pop(1,example)
 examplePop
-peek(examplePop)
-len(examplePop)
 
-stack = push([1..30])
-stack
-putStrLn ""
-stack2 = pop(15,stack)
-stack2
-stack3 = push([1..5])
-stack3
-putStrLn ""
+example = push([4,5,6], examplePop)
+example
 
 putStrLn ""
 putStrLn "Process finished with exit code 0"
