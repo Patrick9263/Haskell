@@ -27,7 +27,7 @@ pop(stack) =
     in (lastElement, newStack)
 :}
 
-
+-- 4102
 peek (stack) = last stack
 len(stack) = length stack
 -- ******************************************
@@ -43,6 +43,7 @@ poppedList
 
 example = push([4,5,6], poppedList)
 example
+
 
 putStrLn ""
 putStrLn "Process finished with exit code 0"
