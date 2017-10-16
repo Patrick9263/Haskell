@@ -30,7 +30,7 @@ pop(stack) =
 
 peek (stack) = last stack
 len(stack) = length stack
-
+-- ******************************************
 emptyStack = []
 example = push([1,2,3,4], emptyStack)
 example
