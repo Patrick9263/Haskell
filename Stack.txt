@@ -1,13 +1,10 @@
 -- :script C:\Users\Patrick\HaskellProjects\Stack.txt
 :! cls
 
-:{
-append(value, targetList) =
-  value : targetList
-:}
+append(value, targetList) = value : targetList
 
 :{
-helper (n,x,values) =
+helper (values) =
   let
   n = length values
   firstElement = head values
@@ -15,41 +12,36 @@ helper (n,x,values) =
   in
   if n == 0
     then []
-    else append(firstElement,(helper(n-1,x+1,nextList)))
+    else append(firstElement,(helper(nextList)))
 :}
 
+push(values, stack) = stack ++ helper(values)
+
+-- ************************************
 :{
-helper2 stack =
-  reverse (tail (reverse stack))
-:}
-
-:{
-push(values, stack) =
-  stack ++ helper(0,0,values)
-:}
-
-
-:{
-pop(howMany, list) =
-  if howMany <= 0
-    then list
-    else pop(howMany-1,helper2(list))
+pop(stack) =
+  let
+    lastElement = last stack
+    removeLast = tail (reverse stack)
+    newStack = reverse removeLast
+    in (lastElement, newStack)
 :}
 
 
-peek (stack) = head (reverse stack)
+peek (stack) = last stack
 len(stack) = length stack
-
-
 
 emptyStack = []
 example = push([1,2,3,4], emptyStack)
 example
 
-examplePop = pop(1,example)
-examplePop
+examplePop = pop(example)
+poppedValue = fst examplePop
+poppedList = snd examplePop
+poppedValue
+poppedList
 
-example = push([4,5,6], examplePop)
+example = push([4,5,6], poppedList)
 example
 
 putStrLn ""

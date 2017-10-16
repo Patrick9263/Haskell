@@ -1,0 +1,34 @@
+-- :script C:\Users\Patrick\HaskellProjects\Queue.txt
+:! cls
+
+:{
+append(value, queue) =
+  queue ++ [value]
+:}
+
+:{
+enqueue(items, queue) =
+  let
+  n = length items
+  currentItem = head items
+  addCurrent = append(currentItem, queue)
+  nextItems = tail items
+  in
+  if n == 0
+    then queue
+    else enqueue(nextItems, addCurrent)
+:}
+
+dequeue(queue) = (head queue,tail queue)
+
+emptyQueue = []
+
+example = enqueue([1,2,3],emptyQueue)
+example
+example2 = fst (dequeue(example))
+example2
+
+
+
+putStrLn ""
+putStrLn "Process finished with exit code 0"
