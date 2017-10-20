@@ -2,5 +2,32 @@
 :! cls
 
 append(item, list) = list ++ [item]
+test = 3 : [1,2]
+test
 
-append(3, [1,2])
+:{
+addlast(items, deque) =
+  let
+    n = length items
+    addCurrent = append(head items, deque)
+    nextItems = tail items
+    in
+    if n == 0
+      then deque
+      else addlast(nextItems, addCurrent)
+:}
+
+addlast([1,2,3], [0])
+
+:{
+addfirst(items, deque) =
+  let
+    n = length items
+    currentItem = head items
+    nextItems = tail items
+    in
+    if n == 0
+      then deque
+      else expression
+
+:}
