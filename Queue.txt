@@ -1,34 +1,25 @@
 -- :script C:\Users\Patrick\HaskellProjects\Queue.txt
 :! cls
 
-:{
-append(value, queue) =
-  queue ++ [value]
-:}
+
+append(value, queue) = queue ++ [value]
 
 :{
-enqueue(items, queue) =
-  let
-  n = length items
-  currentItem = head items
-  addCurrent = append(currentItem, queue)
-  nextItems = tail items
-  in
-  if n == 0
-    then queue
-    else enqueue(nextItems, addCurrent)
+enqueue(queue, item) =
+  do putStrLn "h"
+  let result = append(item, queue) in result
+
 :}
+
 
 dequeue(queue) = (head queue,tail queue)
 
+
+
 emptyQueue = []
 
-example = enqueue([1,2,3],emptyQueue)
-example
-example2 = fst (dequeue(example))
-example2
+q1 = enqueue(emptyQueue, 1)
 
+q2 = enqueue(q1, 100)
 
-
-putStrLn ""
-putStrLn "Process finished with exit code 0"
+q3 = enqueue(q2, 200)
