@@ -1,6 +1,7 @@
 -- :script C:\Users\Patrick\HaskellProjects\Queue.hs
-:! cls
-
+import System.Process
+clear = system "cls"
+clear
 
 append(list, value) = list ++ [value]
 enqueue(queue, item) = append(queue, item)
@@ -19,22 +20,22 @@ largeQueue(queue, list) =
   nextList = tail list
   in
   if length list > 0
-    then
-      do
-      --(show currentItem)
-      -- ++ " "
+    then do
+      putStr (show currentItem);
+      putStr " ";
       largeQueue(enqueue(queue, currentItem),nextList)
-      else queue
+      else return ""
 :}
 
-largeQueue2(queue, list) = queue ++ list
+example = [1..10000000000000000000000000000000000000000000000000000000000000000]
+a = dequeue([1..10000000000000000000000000000000000000000000000000000000000000])
+b = enqueue(example,10000000000000000000000000000000000000000000000000000000000)
+c = largeQueue(example,[1..100000000000000000000000000000000000000000000000000])
+largeQueue([1..500],[1..100])
 
-example = [1..100000000000000]
-a = dequeue([1..10000000000000])
-example2 = dequeue(example)
-a = enqueue(example, 1000)
-b = largeQueue(example, [1..10000000])
-c = largeQueue2(example,[1..10000000])
+
+
+
 
 
 putStrLn ""
