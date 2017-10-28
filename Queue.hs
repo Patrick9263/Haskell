@@ -35,8 +35,5 @@ largeQueue([1..500],[1..100])
 
 
 
-
-
-
 putStrLn ""
 putStrLn "Process finished with exit code 0"
