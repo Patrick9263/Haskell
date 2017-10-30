@@ -33,14 +33,20 @@ b = enqueue(example,10000000000000000000000000000000000000000000000000000000000)
 c = largeQueue(example,[1..100000000000000000000000000000000000000000000000000])
 d = largeQueue([1..50],[1..100000])
 
+-- dequeue n elements and only return last element
+
 test1 = [1..10000000000000000000000000000000000000000000000000000000]
 test2 = fst (dequeue test1)
 test3 = enqueue(test1,10000000000000000000000)
 test4 = fst (dequeue test3)
 
+:{
+dequeueAll [] _ = 0
+dequeueAll [x] _ = x
+dequeueAll (_:rest) x = dequeueAll rest x
+:}
 
-
-
+-- dequeuAll example 0
 
 
 :{
