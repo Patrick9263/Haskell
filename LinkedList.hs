@@ -5,16 +5,22 @@ clear
 
 push(list, value) = value : list
 
+addFirst(value, linkList) = push(linkList,value)
+
 :{
-linkedList(value, linkList) =
+addLast(value, linkList) =
   let
-  listData = fst linkList
-  listLink = snd linkList
-  in (value,push(listLink,listData))
+    rev = reverse linkList
+    add = addFirst(value, rev)
+    result = reverse add
+    in result
 :}
 
-link = (0, [])
-link2 = linkedList(1, link)
-link3 = linkedList(2, link2)
-link4 = linkedList(3, link3)
-link5 = linkedList(4, link4)
+
+link = []
+link2 = addFirst(1, link)
+link3 = addFirst(2, link2)
+link4 = addFirst(3, link3)
+link5 = addFirst(4, link4)
+
+link6 = addLast(0, link5)
