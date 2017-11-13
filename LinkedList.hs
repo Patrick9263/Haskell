@@ -16,6 +16,10 @@ addLast(value, linkList) =
     in result
 :}
 
+:{
+removeLast(linkList) =
+
+:}
 
 link = []
 link2 = addFirst(1, link)
