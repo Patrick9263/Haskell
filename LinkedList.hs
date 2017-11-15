@@ -3,9 +3,7 @@ import System.Process
 clear = system "cls"
 clear
 
-push(list, value) = value : list
-
-addFirst(value, linkList) = push(linkList,value)
+addFirst(value, linkList) = value : linkList
 removeFirst(linkList) = tail linkList
 removeLast(linkList) = init linkList
 addLast(value, linkList) = linkList ++ [value]
@@ -18,3 +16,6 @@ link4 = addFirst(3, link3)
 link5 = addFirst(4, link4)
 
 link6 = addLast(0, link5)
+link7 = addLast(-1, link6)
+
+link8 = removeFirst(link7)
