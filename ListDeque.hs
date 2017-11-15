@@ -1,4 +1,4 @@
--- :script C:\Users\Patrick\HaskellProjects\ListDeque.txt
+-- :script C:\Users\Patrick\HaskellProjects\ListDeque.hs
 :! cls
 
 append(item, list) = list ++ [item]
