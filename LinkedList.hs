@@ -6,20 +6,10 @@ clear
 push(list, value) = value : list
 
 addFirst(value, linkList) = push(linkList,value)
+removeFirst(linkList) = tail linkList
+removeLast(linkList) = init linkList
+addLast(value, linkList) = linkList ++ [value]
 
-:{
-addLast(value, linkList) =
-  let
-    rev = reverse linkList
-    add = addFirst(value, rev)
-    result = reverse add
-    in result
-:}
-
-:{
-removeLast(linkList) =
-
-:}
 
 link = []
 link2 = addFirst(1, link)
